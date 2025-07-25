@@ -2,6 +2,8 @@
 
 <div align="center">
 
+![MCP Ecosystem Platform Demo](._init_/mcp_ui_demo_4s.gif)
+
 **Ultimate Developer Productivity Suite** - A comprehensive platform built around 11 specialized MCP (Model Context Protocol) servers, providing AI-powered code analysis, security scanning, browser automation, and intelligent workflow orchestration.
 
 [![GitHub Stars](https://img.shields.io/github/stars/turtir-ai/mcp-ecosystem-platform?style=for-the-badge&logo=github&color=yellow)](https://github.com/turtir-ai/mcp-ecosystem-platform/stargazers)
