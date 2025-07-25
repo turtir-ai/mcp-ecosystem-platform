@@ -1,0 +1,125 @@
+{
+  "mcpServers": {
+    "kiro-tools": {
+      "description": "Kiro IDE integrated tools - filesystem, git, and database operations",
+      "command": "python",
+      "args": ["path/to/kiro-mcp-server.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "autoApprove": ["read_file", "write_file", "list_directory", "git_status"],
+      "disabled": false
+    },
+    "groq-llm": {
+      "description": "⚡ Groq Ultra-Fast LLM - Llama 3.1 8B FREE 30k tokens/min",
+      "command": "python",
+      "args": ["path/to/groq-mcp-server.py"],
+      "env": {
+        "GROQ_API_KEY": "your_groq_api_key_here",
+        "PYTHONPATH": "your/python/path"
+      },
+      "autoApprove": ["groq_generate", "groq_chat", "groq_code_generation"],
+      "disabled": false
+    },
+    "openrouter-llm": {
+      "description": "🌐 OpenRouter Multi-Model LLM - Access to GPT-4, Claude, Llama",
+      "command": "python",
+      "args": ["path/to/openrouter-mcp-server.py"],
+      "env": {
+        "OPENROUTER_API_KEY": "your_openrouter_api_key_here",
+        "PYTHONPATH": "your/python/path"
+      },
+      "autoApprove": ["openrouter_generate", "openrouter_chat", "openrouter_list_models"],
+      "disabled": false
+    },
+    "browser-automation": {
+      "description": "🌐 REALISTIC Browser Automation MCP - Real browser interactions with Gemini AI and Brave Search",
+      "command": "python",
+      "args": ["path/to/browser-automation-mcp.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path",
+        "GOOGLE_API_KEY": "your_google_api_key_here",
+        "BRAVE_SEARCH_API_KEY": "your_brave_search_api_key_here",
+        "GEMINI_MODEL": "gemini-1.5-flash"
+      },
+      "autoApprove": ["search_web", "launch_browser", "navigate_to", "take_screenshot"],
+      "disabled": false
+    },
+    "deep-research": {
+      "description": "🔬 REAL Deep Research MCP - Comprehensive research with Brave Search + Gemini AI",
+      "command": "python",
+      "args": ["path/to/deep-research-mcp.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path",
+        "GOOGLE_API_KEY": "your_google_api_key_here",
+        "BRAVE_SEARCH_API_KEY": "your_brave_search_api_key_here",
+        "GEMINI_MODEL": "gemini-1.5-flash"
+      },
+      "autoApprove": ["elaborate_research_question", "comprehensive_web_research"],
+      "disabled": false
+    },
+    "network-analysis": {
+      "description": "🌐 Real Network Analysis - Ping, port scan, traceroute, DNS lookup",
+      "command": "python",
+      "args": ["path/to/network-analysis-mcp.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path"
+      },
+      "autoApprove": ["get_network_interfaces", "ping_host", "dns_lookup"],
+      "disabled": false
+    },
+    "enhanced-filesystem": {
+      "description": "📁 Enhanced Filesystem MCP - Secure file operations",
+      "command": "python",
+      "args": ["path/to/enhanced-filesystem-mcp.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path"
+      },
+      "autoApprove": ["read_file", "write_file", "list_directory"],
+      "disabled": false
+    },
+    "enhanced-git": {
+      "description": "🔧 Enhanced Git MCP - Version control with better output",
+      "command": "python",
+      "args": ["path/to/enhanced-git-mcp.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path"
+      },
+      "autoApprove": ["git_status", "git_diff", "git_log"],
+      "disabled": false
+    },
+    "context7": {
+      "description": "📚 Context7 MCP - Up-to-date documentation and code examples",
+      "command": "context7-mcp",
+      "args": [],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "autoApprove": ["resolve-library-id", "get-library-docs"],
+      "disabled": false
+    },
+    "huggingface": {
+      "description": "🤗 Hugging Face MCP - AI models, datasets, and transformers",
+      "command": "python",
+      "args": ["path/to/huggingface-mcp.py"],
+      "env": {
+        "PYTHONPATH": "your/python/path",
+        "HUGGINGFACE_READ_TOKEN": "your_hf_read_token_here",
+        "HUGGINGFACE_WRITE_TOKEN": "your_hf_write_token_here"
+      },
+      "autoApprove": ["search_models", "get_model_info", "search_datasets"],
+      "disabled": false
+    },
+    "github": {
+      "description": "🐙 GitHub MCP Server - Repository management, issues, PRs, and code analysis",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_github_token_here"
+      },
+      "autoApprove": ["get_file_contents", "list_issues", "search_repositories"],
+      "disabled": false
+    }
+  }
+}

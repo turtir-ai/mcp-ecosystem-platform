@@ -1,0 +1,198 @@
+{
+  "name": "mcp-ecosystem-platform",
+  "displayName": "MCP Ecosystem Platform",
+  "description": "VS Code extension for MCP Ecosystem Platform - AI-powered code review, workflow automation, and development tools",
+  "version": "1.0.0",
+  "publisher": "mcp-ecosystem",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcp-ecosystem/mcp-ecosystem-platform.git"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Linters",
+    "Testing",
+    "Debuggers"
+  ],
+  "keywords": [
+    "mcp",
+    "ai",
+    "code-review",
+    "automation",
+    "workflow",
+    "security",
+    "analysis"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mcpPlatform.reviewCode",
+        "title": "Review Code with AI",
+        "category": "MCP Platform",
+        "icon": "$(search-fuzzy)"
+      },
+      {
+        "command": "mcpPlatform.reviewCurrentFile",
+        "title": "Review Current File",
+        "category": "MCP Platform",
+        "icon": "$(file-code)"
+      },
+      {
+        "command": "mcpPlatform.runWorkflow",
+        "title": "Run Workflow",
+        "category": "MCP Platform",
+        "icon": "$(play)"
+      },
+      {
+        "command": "mcpPlatform.openDashboard",
+        "title": "Open Dashboard",
+        "category": "MCP Platform",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "mcpPlatform.showStatus",
+        "title": "Show MCP Status",
+        "category": "MCP Platform",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "mcpPlatform.refreshStatus",
+        "title": "Refresh Status",
+        "category": "MCP Platform",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "mcpPlatform.reviewCurrentFile",
+          "group": "mcp@1",
+          "when": "editorHasSelection || editorTextFocus"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "mcpPlatform.reviewCode",
+          "group": "mcp@1",
+          "when": "explorerResourceIsFolder || resourceExtname =~ /\\.(js|ts|jsx|tsx|py|java|cpp|c|cs|php|rb|go|rs)$/"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "mcpPlatform.reviewCode",
+          "when": "true"
+        },
+        {
+          "command": "mcpPlatform.reviewCurrentFile",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "mcpPlatform.runWorkflow",
+          "when": "true"
+        },
+        {
+          "command": "mcpPlatform.openDashboard",
+          "when": "true"
+        },
+        {
+          "command": "mcpPlatform.showStatus",
+          "when": "true"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "mcpPlatformStatus",
+          "name": "MCP Platform Status",
+          "when": "true"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mcpPlatform",
+          "title": "MCP Platform",
+          "icon": "$(server-process)"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MCP Ecosystem Platform",
+      "properties": {
+        "mcpPlatform.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8001",
+          "description": "MCP Platform API URL"
+        },
+        "mcpPlatform.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for MCP Platform authentication"
+        },
+        "mcpPlatform.autoReview": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically review code on save"
+        },
+        "mcpPlatform.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show MCP Platform status in status bar"
+        },
+        "mcpPlatform.notificationLevel": {
+          "type": "string",
+          "enum": ["none", "errors", "warnings", "all"],
+          "default": "warnings",
+          "description": "Level of notifications to show"
+        }
+      }
+    },
+    "statusBarItems": [
+      {
+        "id": "mcpPlatformStatus",
+        "name": "MCP Platform Status",
+        "text": "$(pulse) MCP",
+        "tooltip": "MCP Platform Status",
+        "command": "mcpPlatform.showStatus",
+        "alignment": "right",
+        "priority": 100
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@types/mocha": "^10.0.0",
+    "@types/glob": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.0",
+    "vsce": "^2.15.0",
+    "mocha": "^10.0.0",
+    "glob": "^8.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "ws": "^8.14.0"
+  }
+}

@@ -1,0 +1,180 @@
+# GitHub Repository Settings
+repository:
+  name: mcp-ecosystem-platform
+  description: "🚀 Ultimate Developer Productivity Suite - A comprehensive platform built around 11 specialized MCP servers, providing AI-powered code analysis, security scanning, browser automation, and intelligent workflow orchestration."
+  homepage: https://github.com/turtir-ai/mcp-ecosystem-platform
+  topics:
+    - mcp
+    - model-context-protocol
+    - ai-tools
+    - developer-productivity
+    - fastapi
+    - react
+    - typescript
+    - docker
+    - kubernetes
+    - automation
+    - security-scanning
+    - browser-automation
+    - web-scraping
+    - code-analysis
+    - git-automation
+    - workflow-orchestration
+    - llm-integration
+    - groq
+    - openrouter
+    - python
+    - javascript
+    - devtools
+    - api-security
+    - network-analysis
+    - vscode-extension
+    - microservices
+    - async-programming
+    - redis
+    - postgresql
+    - material-ui
+    - playwright
+    - ai-assistant
+    - developer-tools
+    - productivity-suite
+    - open-source
+  private: false
+  has_issues: true
+  has_projects: true
+  has_wiki: true
+  has_downloads: true
+  has_pages: false
+  has_discussions: true
+  default_branch: main
+  allow_squash_merge: true
+  allow_merge_commit: true
+  allow_rebase_merge: true
+  allow_auto_merge: false
+  delete_branch_on_merge: true
+  allow_update_branch: true
+
+# Branch protection rules
+branches:
+  - name: main
+    protection:
+      required_status_checks:
+        strict: true
+        contexts:
+          - "test-backend"
+          - "test-frontend"
+          - "docker-build"
+          - "security-scan"
+      enforce_admins: false
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        require_last_push_approval: false
+      restrictions: null
+      allow_force_pushes: false
+      allow_deletions: false
+
+# Labels for issues and PRs
+labels:
+  # Type labels
+  - name: "type: bug"
+    color: "d73a4a"
+    description: "Something isn't working"
+  - name: "type: feature"
+    color: "0075ca"
+    description: "New feature or request"
+  - name: "type: enhancement"
+    color: "a2eeef"
+    description: "Improvement to existing feature"
+  - name: "type: documentation"
+    color: "0075ca"
+    description: "Improvements or additions to documentation"
+  - name: "type: refactor"
+    color: "fbca04"
+    description: "Code refactoring"
+  - name: "type: test"
+    color: "1d76db"
+    description: "Adding or updating tests"
+  
+  # Priority labels
+  - name: "priority: critical"
+    color: "b60205"
+    description: "Critical priority"
+  - name: "priority: high"
+    color: "d93f0b"
+    description: "High priority"
+  - name: "priority: medium"
+    color: "fbca04"
+    description: "Medium priority"
+  - name: "priority: low"
+    color: "0e8a16"
+    description: "Low priority"
+  
+  # Component labels
+  - name: "component: backend"
+    color: "5319e7"
+    description: "FastAPI backend related"
+  - name: "component: frontend"
+    color: "1f77b4"
+    description: "React frontend related"
+  - name: "component: mcp-server"
+    color: "ff7f0e"
+    description: "MCP server related"
+  - name: "component: vscode-extension"
+    color: "2ca02c"
+    description: "VS Code extension related"
+  - name: "component: docker"
+    color: "d62728"
+    description: "Docker/containerization related"
+  - name: "component: ci-cd"
+    color: "9467bd"
+    description: "CI/CD pipeline related"
+  - name: "component: security"
+    color: "8c564b"
+    description: "Security related"
+  - name: "component: documentation"
+    color: "e377c2"
+    description: "Documentation related"
+  
+  # Status labels
+  - name: "status: needs-review"
+    color: "fbca04"
+    description: "Needs code review"
+  - name: "status: in-progress"
+    color: "0052cc"
+    description: "Currently being worked on"
+  - name: "status: blocked"
+    color: "d93f0b"
+    description: "Blocked by other issues"
+  - name: "status: ready-to-merge"
+    color: "0e8a16"
+    description: "Ready to be merged"
+  
+  # Difficulty labels
+  - name: "difficulty: beginner"
+    color: "7057ff"
+    description: "Good for newcomers"
+  - name: "difficulty: intermediate"
+    color: "fbca04"
+    description: "Requires some experience"
+  - name: "difficulty: advanced"
+    color: "d93f0b"
+    description: "Requires significant experience"
+  
+  # Special labels
+  - name: "hacktoberfest"
+    color: "ff6b35"
+    description: "Hacktoberfest eligible"
+  - name: "help-wanted"
+    color: "008672"
+    description: "Extra attention is needed"
+  - name: "good-first-issue"
+    color: "7057ff"
+    description: "Good for newcomers"
+  - name: "breaking-change"
+    color: "b60205"
+    description: "Breaking change"
+  - name: "dependencies"
+    color: "0366d6"
+    description: "Pull requests that update a dependency file"
